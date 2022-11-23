@@ -12,3 +12,5 @@ loading location and the unloading location (for the curious, the ideal input wo
 ## COMMENTS
 
 ## INSTRUCTIONS
+
+pip install geopy
