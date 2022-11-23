@@ -13,12 +13,11 @@ def calculateClosest(terminalList, points):
     for terminal in terminalList:
         currentPoints = point.Point(terminal.lat, terminal.lng)
         distance = compute_dist_approach(currentPoints, points)
-        print(distance)
         if distance < shorterDistance[0]:
             shorterDistance[0] = distance
-            shorterDistance[1] = terminal.id
+            shorterDistance[1] = terminal
 
-    return shorterDistance
+    return shorterDistance[1]
 
 
 def compute_airdist(point1, point2):
