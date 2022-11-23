@@ -1,10 +1,24 @@
 import math
 from datetime import timedelta
+from models import point
 
 # Setting of parameters used for approximated distance calculations
 earth_radius = 6371.0000785
 distance_factor = 1.24
 average_speed = 77.2
+
+
+def calculateClosest(terminalList, points):
+    shorterDistance = [99999999999999, "first"]
+    for terminal in terminalList:
+        currentPoints = point.Point(terminal.lat, terminal.lng)
+        distance = compute_dist_approach(currentPoints, points)
+        print(distance)
+        if distance < shorterDistance[0]:
+            shorterDistance[0] = distance
+            shorterDistance[1] = terminal.id
+
+    return shorterDistance
 
 
 def compute_airdist(point1, point2):
