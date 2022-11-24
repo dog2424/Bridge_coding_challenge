@@ -7,6 +7,13 @@ earth_radius = 6371.0000785
 distance_factor = 1.24
 average_speed = 77.2
 
+# very simple and not 100% efficent, in the future with much more terminal records is better to use a K-D tree:
+# ex:
+# from scipy import spatial
+# terminals = [(10,10),(20,20),(30,30),(40,40)]
+# tree = spatial.KDTree(terminals)
+# tree.query([(load/unload coordinates)])
+
 
 def calculateClosest(terminalList, points):
     shorterDistance = [99999999999999, "first"]

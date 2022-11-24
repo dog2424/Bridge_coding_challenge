@@ -2,11 +2,11 @@ from db.from_db import loadTerminalsFromDB
 
 
 class Terminal:
-
+    # load terminals db
     terminalsJSON = loadTerminalsFromDB()
 
     def __init__(self):
-
+        # the terminal name is not an id ,yes, but in a future database must exist an id
         self.id = ""
         self.modesServed = ""
         self.terminalOperator = ""
@@ -22,6 +22,7 @@ class Terminal:
         self.city = ""
         self.state = ""
 
+    # get all terminal id with base data to be more efficent
     def getTerminalList():
         terminals = Terminal.terminalsJSON
         terminalsObjList = []
@@ -35,13 +36,14 @@ class Terminal:
 
         return terminalsObjList
 
+    # filter terminal by id with more data
     def getTerminalById(id):
         terminal = list(filter(lambda x: x.get(
             "terminal") == id, Terminal.terminalsJSON))
 
         # check if terminal id exist
         if len(terminal) < 1:
-            raise Exception("ID not found")
+            raise Exception("terminal ID not found")
 
         tempTerminal = Terminal()
         tempTerminal.id = terminal[0]["terminal"]

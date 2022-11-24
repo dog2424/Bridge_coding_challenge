@@ -16,12 +16,12 @@ def main():
     geolocator = Nominatim(user_agent="Bridge_coding_challenge")
 
     loadingLocation = geolocator.geocode(loadAddress)
-
+    # check if input address is right
     if loadingLocation is None:
         raise Exception(loadAddress + " not found")
 
     unloadingLocation = geolocator.geocode(unloadAddress)
-
+    # check if input address is right
     if unloadingLocation is None:
         raise Exception(unloadAddress + " not found")
 
