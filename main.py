@@ -37,7 +37,7 @@ def main():
     # OUTPUT DATA
 
     print("\n----------------------------------------------------------------------")
-    print("\nThe closest train terminals to " +
+    print("\nThe closest train terminal to " +
           loadAddress + " is: "+shorterLoadTerminal.id)
 
     loadTerminalInfo = terminal.Terminal.getTerminalById(
@@ -46,7 +46,7 @@ def main():
     print("\nSome terminal Info: " + loadTerminalInfo.address,
           loadTerminalInfo.terminalOperator, loadTerminalInfo.phone, loadTerminalInfo.zipcode+"\n")
     print("-------------------------------")
-    print("\nThe closest train terminals to " +
+    print("\nThe closest train terminal to " +
           unloadAddress + " is: "+shorterUnloadTerminal.id)
 
     unloadTerminalInfo = terminal.Terminal.getTerminalById(
