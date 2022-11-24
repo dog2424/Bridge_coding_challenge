@@ -9,8 +9,12 @@ software development team for a small program that would be able to find the tra
 information) closest to the loading and unloading point, given as input the geographic coordinates of the
 loading location and the unloading location (for the curious, the ideal input would be just the address).
 
-## COMMENTS
-
 ## INSTRUCTIONS
 
-pip install geopy
+### install pip install geopy
+
+### Go to Bridge_coding_challenge directory
+
+### To run solution write: py main.py
+
+### write a city or address or cap
