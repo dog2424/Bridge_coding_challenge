@@ -6,6 +6,8 @@ from models import point
 
 def main():
 
+    # INPUT DATA
+
     terminalList = terminal.Terminal.getTerminalList()
 
     loadAddress = input("Please insert the loading Address: ")
@@ -15,7 +17,13 @@ def main():
 
     loadingLocation = geolocator.geocode(loadAddress)
 
+    if loadingLocation is None:
+        raise Exception(loadAddress + " not found")
+
     unloadingLocation = geolocator.geocode(unloadAddress)
+
+    if unloadingLocation is None:
+        raise Exception(unloadAddress + " not found")
 
     points = point.Point(loadingLocation.latitude, loadingLocation.longitude)
     shorterLoadTerminal = dist_calculator.calculateClosest(
@@ -25,6 +33,9 @@ def main():
                          unloadingLocation.longitude)
     shorterUnloadTerminal = dist_calculator.calculateClosest(
         terminalList, points)
+
+    # OUTPUT DATA
+
     print("\n----------------------------------------------------------------------")
     print("\nThe closest train terminals to " +
           loadAddress + " is: "+shorterLoadTerminal.id)
